@@ -3,4 +3,5 @@ app = Flask(__name__)                     # Global variable __name__ tells Flask
 @app.route('/')       
 def hello_world():
   return render_template('index.html')    # Render the template and return it!
-app.run(host="localhost", port=8008, debug=True)
+if __name__ == "__main__":
+   app.run(debug=True)
