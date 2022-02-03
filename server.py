@@ -3,4 +3,6 @@ app = Flask(__name__)                     # Global variable __name__ tells Flask
 @app.route('/')       
 def hello_world():
   return render_template('index.html')    # Render the template and return it!
-app.run(debug=True)                  
+  server.listen(process.env.PORT || port)
+ app.run(host=os.getenv('IP', '0.0.0.0'), 
+            port=int(os.getenv('PORT', 4444)))
